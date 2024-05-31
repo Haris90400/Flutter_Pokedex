@@ -41,10 +41,12 @@ class HomePageController extends StateNotifier<HomePageData> {
           PokemonListData data = PokemonListData.fromJson(_res.data);
 
           state = state.copyWith(
-            data: data.copyWith(results: [
-              ...?state.data?.results,
-              ...?data.results,
-            ]),
+            data: data.copyWith(
+              results: [
+                ...?state.data?.results,
+                ...?data.results,
+              ],
+            ),
           );
         }
       }
